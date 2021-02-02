@@ -14,3 +14,5 @@ class BootCampTask(QCAlgorithm):
     def OnData(self, data):
         pass
 ```
+
+Where put the amount into the `self.SetCash()` function.
