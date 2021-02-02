@@ -1,7 +1,8 @@
-# Save all codes relevant tot Quantconnect tutorial walkthrough
+# Quantconnect tutorial walkthrough
 
-# 1. Set Up Cash
+1. Set Up Cash
 
+```
 class BootCampTask(QCAlgorithm):
 
     def Initialize(self):
@@ -12,3 +13,4 @@ class BootCampTask(QCAlgorithm):
         
     def OnData(self, data):
         pass
+```
