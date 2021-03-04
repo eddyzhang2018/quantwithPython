@@ -2,6 +2,8 @@
 
 import pandas as pd
 
+# to calculate drawdown for one portfolio
+
 def drawdown(return_series: pd.Series):
     
     wealth_index = 10000*(1+return_series).cumprod()
