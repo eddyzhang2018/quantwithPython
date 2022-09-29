@@ -88,11 +88,35 @@ class BootCampTask(QCAlgorithm):
         self.SetEndDate(2017, 6, 2)
         
         #1. Update the AddEquity command to request IBM data
-        self.spy = self.AddEquity("IBM", Resolution.Daily)
+        self.ibm = self.AddEquity("IBM", Resolution.Daily)
         
     def OnData(self, data):
         
         #2. Display the Quantity of IBM Shares You Own
-        self.Debug("Number of IBM Shares: " + str(self.Portfolio["IBM"].Invested))
+        self.Debug("Number of IBM Shares: " + str(self.Portfolio["IBM"].Quantity))
 
 ```
+
+**6.Placing Orders**
+
+```
+class BootCampTask(QCAlgorithm):
+
+    def Initialize(self):
+        self.SetStartDate(2017, 6, 1)
+        self.SetEndDate(2017, 6, 15)
+
+        #1,2. Select IWM minute resolution data and set it to Raw normalization mode
+        self.iwm = self.AddEquity("IWM", Resolution.Minute)
+        self.iwm.SetDataNormalizationMode(DataNormalizationMode.Raw)
+
+    def OnData(self, data):
+
+        #3. Place an order for 100 shares of IWM and print the average fill price
+        If not self.Portfolio.Invested:
+            self.MarketOrder("IWM", 100)
+        #4. Debug the AveragePrice of IWM
+            self.Debug(str(self.Portfolio["IWM"].AveragePrice))
+
+```
+
