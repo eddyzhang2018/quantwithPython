@@ -8,7 +8,7 @@ Python repository for quant finance and related
    
    There is no conda install for the backtesting, directly use pip install.
    
-   '''
+   ```
    pip install backtesting
    ```
    
